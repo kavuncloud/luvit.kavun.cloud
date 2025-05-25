@@ -44,11 +44,20 @@ function createCard(pkg) {
 }
 
 function formatTimeAgo(seconds) {
-    if (seconds < 60) return `${seconds} seconds ago`
-    if (seconds < 3600) return `${Math.floor(seconds / 60)} minutes ago`
-    if (seconds < 86400) return `${Math.floor(seconds / 3600)} hours ago`
+    const minutes = Math.floor(seconds / 60)
+    const hours = Math.floor(seconds / 3600)
     const days = Math.floor(seconds / 86400)
-    return `${days} day${days !== 1 ? 's' : ''} ago`
+    const weeks = Math.floor(seconds / (86400 * 7))
+    const months = Math.floor(seconds / (86400 * 30))
+    const years = Math.floor(seconds / (86400 * 365))
+
+    if (seconds < 60) return `${seconds} second${seconds !== 1 ? 's' : ''} ago`
+    if (minutes < 60) return `${minutes} minute${minutes !== 1 ? 's' : ''} ago`
+    if (hours < 24) return `${hours} hour${hours !== 1 ? 's' : ''} ago`
+    if (days < 7) return `${days} day${days !== 1 ? 's' : ''} ago`
+    if (weeks < 5) return `${weeks} week${weeks !== 1 ? 's' : ''} ago`
+    if (months < 12) return `${months} month${months !== 1 ? 's' : ''} ago`
+    return `${years} year${years !== 1 ? 's' : ''} ago`
 }
 
 function doSearch(query) {
