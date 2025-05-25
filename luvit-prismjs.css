@@ -1,0 +1,75 @@
+/* custom luvit prism.js theme */
+code[class*="language-"],
+pre[class*="language-"] {
+  font-family: "JetBrains Mono", monospace;
+  color: #f8f8f2;
+  background: #161616;
+  text-shadow: none;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #999;
+  font-style: italic;
+}
+
+.token.punctuation {
+  color: #ea8667;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #f93e2d;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #fb670b;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.token.string {
+  color: #74c78d;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #ff7142;
+}
+
+.token.function,
+.token.class-name {
+  color: #f9c74f;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: #f94144;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
