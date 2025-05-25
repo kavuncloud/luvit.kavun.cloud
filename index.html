@@ -42,12 +42,14 @@
                 <li><a href="/install.html" class="hover:text-white">Install</a></li>
                 <li><a href="/lit.html" class="hover:text-white">Libraries</a></li>
                 <li><a href="/blog/" class="hover:text-white">Blog</a></li>
+                <a href="https://discord.gg/luvit" title="Discord" class="hover:text-white">
+                    <i class="fab fa-discord"></i> </a>
             </ul>
         </div>
     </nav>
 
     <header
-        class="relative h-screen w-full pt-20 bg-gradient-to-br from-yellow-500/30 to-red-500/50 backdrop-blur-xl overflow-hidden flex items-center">
+        class="relative h-screen w-full pt-20 bg-gradient-to-br from-[#0594bd]/30 to-[#ffbf28]/40 backdrop-blur-xl overflow-hidden flex items-center">
         <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
             <div class="z-10 order-2 md:order-1">
                 <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Lua Evolved.</h1>
@@ -73,21 +75,21 @@
 
     <section class="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-3 gap-12">
         <div class="bg-zinc-900/60 backdrop-blur-md rounded-xl p-6 shadow-xl border border-zinc-800">
-            <h2 class="text-xl font-semibold mb-3 flex items-center gap-2"><i class="fas fa-cubes text-yellow-400"></i>
+            <h2 class="text-xl font-semibold mb-3 flex items-center gap-2"><i class="fas fa-cubes text-[#0594bd]"></i>
                 Familiar API</h2>
             <p class="text-zinc-400">Luvit speaks the language of Node - so you're productive from day one, but with the
                 blazing speed of LuaJIT under the
                 hood.</p>
         </div>
         <div class="bg-zinc-900/60 backdrop-blur-md rounded-xl p-6 shadow-xl border border-zinc-800">
-            <h2 class="text-xl font-semibold mb-3 flex items-center gap-2"><i class="fas fa-random text-yellow-400"></i>
+            <h2 class="text-xl font-semibold mb-3 flex items-center gap-2"><i class="fas fa-random text-[#0594bd]"></i>
                 Async Flexibility</h2>
             <p class="text-zinc-400">Callbacks? Coroutines? Event emitters? Yes. Luvit doesn't force a pattern - it
                 embraces your flow.</p>
         </div>
         <div class="bg-zinc-900/60 backdrop-blur-md rounded-xl p-6 shadow-xl border border-zinc-800">
             <h2 class="text-xl font-semibold mb-3 flex items-center gap-2"><i
-                    class="fas fa-layer-group text-yellow-400"></i> Modular Core</h2>
+                    class="fas fa-layer-group text-[#0594bd]"></i> Modular Core</h2>
             <ul class="list-disc pl-5 text-zinc-400 space-y-1">
                 <li>Use <code>luv</code> directly in LuaJIT</li>
                 <li>Run <code>lit</code> without Node APIs</li>
@@ -113,54 +115,45 @@
             and never breaks a sweat. Thank you, LuaJIT!</p>
     </section>
 
-    <section class="max-w-5xl mx-auto px-6 py-16">
-        <h2 class="text-3xl font-bold mb-6 text-center">Using the Node-Style APIs</h2>
-        <p class="text-zinc-400 mb-4">The <code>luvit</code> CLI tool can be used as a scripting platform just like
-            <code>node</code>. This can be used to run Lua scripts as standalone servers, clients, or other tools.
-        </p>
-        <p class="text-zinc-400 mb-4">This simple web server written in Luvit responds with <q>Hello World</q> for every
-            request:</p>
-
-
-        <pre class="language-lua rounded-xl overflow-auto mb-8 p-6 bg-[#161616] border border-zinc-800 shadow-inner"><code class="language-lua">local http = require('http')
+    <section class="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12 items-start">
+        <div>
+            <h2 class="text-3xl font-bold mb-6">Using the Node-Style APIs</h2>
+            <p class="text-zinc-400 mb-4">The <code>luvit</code> CLI tool can be used as a scripting platform just like
+                <code>node</code>...
+            </p>
+            <p class="text-zinc-400 mb-4">This simple web server responds with <q>Hello World</q>, and you can run it
+                with <code>luvit server.lua</code>:</p>
+            <p class="text-zinc-400">No need for Apache or Nginx - it that good, it just works.</p>
+        </div>
+        <div>
+            <pre
+                class="language-lua rounded-xl overflow-auto mb-6 p-6 bg-[#161616] border border-zinc-800 shadow-inner"><code class="language-lua">local http = require("http")
 
 http.createServer(function(req, res)
   local body = "Hello world\n"
   res:setHeader("Content-Type", "text/plain")
   res:setHeader("Content-Length", #body)
   res:finish(body)
-end):listen(1337, '127.0.0.1')
+end):listen(8080, "127.0.0.1")
 
-print('Server running at http://127.0.0.1:1337/')</code></pre>
-        <p class="text-zinc-400 mb-4">And run this script using <code>luvit</code>:</p>
-        <pre
-            class="rounded-xl overflow-auto mb-8 p-6 bg-[#161616] border border-zinc-800 shadow-inner text-sm font-mono"><code><span class="text-yellow-400">&gt; </span><span class="text-red-400 font-semibold">luvit</span> <span class="text-orange-400">server.lua</span>
-<span class="text-green-400">Server running at http://127.0.0.1:1337/</span></code></pre>
-        <p class="text-zinc-400 mb-4">This script is a standalone HTTP server - there is no need for Apache or Nginx to
-            act as
-            a host.</p>
+print("Server running at http://127.0.0.1:8080/")</code></pre>
+
+            <pre
+                class="rounded-xl overflow-auto mb-8 p-6 bg-[#161616] border border-zinc-800 shadow-inner text-sm font-mono"><code><span class="text-yellow-400">&gt; </span><span class="text-red-400 font-semibold">luvit</span> <span class="text-orange-400">server.lua</span>
+<span class="text-green-400">Server running at http://127.0.0.1:8080/</span></code></pre>
+        </div>
     </section>
 
-    <section class="max-w-5xl mx-auto px-6 py-16">
-        <h2 class="text-3xl font-bold mb-6 text-center">Using Third-Party Libraries</h2>
-        <p class="text-zinc-400 mb-4">Say goodbye to complicated build pipelines. Luvit's lit package system makes
-            dependency management painless and
-            scriptable.
-        </p>
-        <p class="text-zinc-400 mb-4">For example, <a href="https://github.com/creationix"
-                class="text-yellow-400 hover:text-red-400 hover:underline">@creationix</a> has made a set of libraries
-            that use coroutines instead
-            of callbacks for async I/O and published these to <code>lit</code>.</p>
-        <p class="text-zinc-400 mb-4">Use <code>lit</code> to install <code>creationix/weblit</code> and build an
-            express-like framework on top of coroutines:</p>
-        <pre
-            class="rounded-xl overflow-auto mb-8 p-6 bg-[#161616] border border-zinc-800 shadow-inner text-sm font-mono"><code><span class="text-yellow-400">&gt; </span><span class="text-blue-400">mkdir</span> <span class="text-orange-400">myapp</span> <span class="text-zinc-400">&amp;&amp;</span> <span class="text-blue-400">cd</span> <span class="text-orange-400">myapp</span>
-<span class="text-yellow-400">&gt; </span><span class="text-red-400 font-semibold">lit</span> <span class="text-orange-400">install creationix/weblit</span>
-<span class="text-yellow-400">&gt; </span><span class="text-blue-400">vim</span> <span class="text-orange-400">server.lua</span>
-<span class="text-yellow-400">&gt; </span><span class="text-red-400 font-semibold">luvit</span> <span class="text-orange-400">server.lua</span>
-</code></pre>
-        <p class="text-zinc-400 mb-4">The <code>server.lua</code> file will contain:</p>
-        <pre class="language-lua rounded-xl overflow-auto mb-8 p-6 bg-[#161616] border border-zinc-800 shadow-inner"><code class="language-lua">local weblit = require('weblit')
+    <section class="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12 items-start">
+        <div>
+            <pre
+                class="language-shell rounded-xl overflow-auto mb-6 p-4 bg-[#161616] border border-zinc-800 shadow-inner text-sm font-mono"><code>&gt; mkdir myapp && cd myapp
+&gt; lit install creationix/weblit
+&gt; nano server.lua
+&gt; luvit server.lua</code></pre>
+
+            <pre
+                class="language-lua rounded-xl overflow-auto mb-6 p-6 bg-[#161616] border border-zinc-800 shadow-inner"><code class="language-lua">local weblit = require("weblit")
 
 weblit.app.bind({ host = "127.0.0.1", port = 1337 })
 
@@ -170,16 +163,27 @@ weblit.app.bind({ host = "127.0.0.1", port = 1337 })
 
 -- A custom route that sends back method and part of url.
     .route({ path = "/:name" }, function(req, res)
-      res.body = req.method .. " - " .. req.params.name .. "\n"
-      res.code = 200
-      res.headers["Content-Type"] = "text/plain"
+        res.body = req.method .. " - " .. req.params.name .. "\n"
+        res.code = 200
+        res.headers["content-type"] = "text/plain"
     end)
 
 -- Start the server
     .start()</code></pre>
-        <p class="text-zinc-400 mt-4">This very site is being served by <code>weblit</code>. Source: <a
-                href="https://github.com/luvit/luvit.io"
-                class="text-yellow-400 hover:text-red-400 hover:underline">https://github.com/luvit/luvit.io</a></p>
+        </div>
+        <div>
+            <h2 class="text-3xl font-bold mb-6">Using Third-Party Libraries</h2>
+            <p class="text-zinc-400 mb-4">Say goodbye to complicated build pipelines. Luvit's <code>lit</code> package
+                system makes dependency management painless and scriptable.
+            </p>
+            <p class="text-zinc-400 mb-4">For example, <a href="https://github.com/creationix"
+                    class="text-[#0594bd] hover:underline">@creationix</a> created coroutine-based libraries like
+                <code>weblit</code>.
+            </p>
+            <p class="text-zinc-400 mb-4">Install with <code>lit install creationix/weblit</code> and serve with
+                <code>luvit</code>.
+            </p>
+        </div>
     </section>
 
     <section class="max-w-5xl mx-auto px-6 py-16 text-center">
@@ -189,17 +193,28 @@ weblit.app.bind({ host = "127.0.0.1", port = 1337 })
             accessibility for users and contributors alike.</p>
     </section>
 
-    <section class="max-w-5xl mx-auto px-6 py-16 text-center">
-        <p class="flex justify-center gap-6 text-xl text-indigo-400">
-            <a href="https://discord.gg/luvit" title="Discord"><i
-                    class="fab fa-discord hover:text-white transition"></i></a>
-        </p>
-    </section>
-
     <footer class="py-10 text-center border-t border-zinc-800 text-sm text-zinc-500">
-        <p>© 2015 - 2025 The Luvit Authors • <a href="https://github.com/luvit/luvit.io"
-                class="text-yellow-400 hover:text-red-400 hover:underline">Source on GitHub</a></p>
+        <p class="mb-3">
+            <a href="https://github.com/luvit/luvit.io" class="text-[#0594bd] hover:text-white mx-2"><i
+                    class="fab fa-github"></i></a>
+            <a href="https://discord.gg/luvit" class="text-[#0594bd] hover:text-white mx-2"><i
+                    class="fab fa-discord"></i></a>
+        </p>
+        <p>© 2015 - 2025 The Luvit Authors •
+            <a href="https://github.com/luvit/luvit.io" class="text-[#ffbf28] hover:text-red-400 hover:underline">
+                Source on GitHub
+            </a>
+        </p>
     </footer>
+
+    <div class="text-center text-sm text-zinc-600 px-4 pb-10">
+        <p>This is an independent fan-made redesign of the Luvit website, created to highlight the brilliance of the
+            Luvit
+            ecosystem.</p>
+        <p>Designed by Numelon Bespoke as a demonstration. Kavun Cloud and nearly every Numelon service uses Luvit under
+            the
+            hood. It's that good.</p>
+    </div>
 </body>
 </body>
 
