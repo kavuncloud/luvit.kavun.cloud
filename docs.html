@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luvit - Documentation</title>
+
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <script src="minified/prism.js"></script>
+    <script src="minified/prism-lua.js"></script>
+    <script src="minified/prism-bash.js"></script>
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Ubuntu:wght@400;700&display=swap">
+    <style>
+        body {
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+        code[class*="language-"] {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+    </style>
+
+    <link rel="stylesheet" href="luvit-prismjs.css">
+
+    <script defer data-domain="luvit.kavun.cloud"
+        src="https://plstrk.numelon.com/js/script.file-downloads.hash.outbound-links.js"></script>
+    <script>window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+
+    <meta name="theme-color" content="#0594bd">
+
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <meta property="og:url" content="https://luvit.kavun.cloud/">
+    <meta name="twitter:url" content="https://luvit.kavun.cloud/">
+
+    <meta property="og:title" content="Luvit - Documentation">
+    <meta name="twitter:title" content="Luvit - Documentation">
+
+    <meta property="og:description"
+        content="Explore the full Luvit ecosystem - APIs, libraries, examples, and tools for building fast, asynchronous Lua applications.">
+    <meta name="twitter:description"
+        content="Explore the full Luvit ecosystem - APIs, libraries, examples, and tools for building fast, asynchronous Lua applications.">
+
+    <meta property="og:image" content="https://luvit.kavun.cloud/opengraph/opengraph.jpg">
+    <meta name="twitter:image" content="https://luvit.kavun.cloud/opengraph/opengraph.jpg">
+</head>
+
+<body class="bg-zinc-950 text-zinc-100">
+    <nav class="fixed top-0 w-full z-50 bg-zinc-900/60 backdrop-blur border-b border-zinc-800">
+        <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+            <a href="/" class="flex items-center gap-3">
+                <img src="img/luvit.svg" class="h-7" alt="Luvit Logo">
+            </a>
+            <ul class="flex gap-6 text-sm text-zinc-300">
+                <li><a href="/docs.html" class="hover:text-white">Docs</a></li>
+                <li><a href="/install.html" class="hover:text-white">Install</a></li>
+                <li><a href="/lit.html" class="hover:text-white">Libraries</a></li>
+                <li><a href="https://luvit.io/blog/" class="hover:text-white">Blog</a></li>
+                <a href="https://discord.gg/luvit" title="Discord" class="hover:text-white">
+                    <i class="fab fa-discord"></i> </a>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="max-w-7xl mx-auto px-6 py-16">
+        <h2 class="text-3xl font-bold text-center mb-10">Documentation</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+
+            <!-- API docs -->
+            <div class="bg-zinc-900/60 backdrop-blur-md p-5 rounded-lg shadow border border-zinc-800">
+                <h3 class="text-xl font-semibold text-[#0594bd] mb-2 flex items-center gap-2">
+                    <i class="fas fa-book"></i> API Docs & Examples
+                </h3>
+                <p class="text-zinc-400 mb-2">Start here to learn the Luvit API. Includes examples!</p>
+                <ul class="list-disc list-inside text-sm text-zinc-300 space-y-1">
+                    <li><a href="/api/" class="hover:underline text-[#ffbf28]">Luvit API Documentation</a></li>
+                    <li><a href="https://github.com/luvit/luvit/tree/master/examples"
+                            class="hover:underline text-[#ffbf28]">Example Luvit Apps</a></li>
+                </ul>
+            </div>
+
+            <!-- nodejs reference -->
+            <div class="bg-zinc-900/60 backdrop-blur-md p-5 rounded-lg shadow border border-zinc-800">
+                <h3 class="text-xl font-semibold text-[#0594bd] mb-2 flex items-center gap-2">
+                    <i class="fab fa-node-js"></i> Node.js Reference
+                </h3>
+                <p class="text-zinc-400 mb-2">Some APIs follow Node.js conventions. Cross-reference for deeper context.
+                </p>
+                <ul class="list-disc list-inside text-sm text-zinc-300 space-y-1">
+                    <li><a href="https://nodejs.org/api/" class="hover:underline text-[#ffbf28]">Node.js API Docs</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- lit tookit -->
+            <div class="bg-zinc-900/60 backdrop-blur-md p-5 rounded-lg shadow border border-zinc-800">
+                <h3 class="text-xl font-semibold text-[#0594bd] mb-2 flex items-center gap-2">
+                    <i class="fas fa-box-open"></i> Lit & Packages
+                </h3>
+                <p class="text-zinc-400 mb-2">Learn how to publish and install packages using Lit, Luvit's package
+                    manager.
+                </p>
+                <ul class="list-disc list-inside text-sm text-zinc-300 space-y-1">
+                    <li><a href="https://github.com/luvit/lit/wiki/Creating-Your-First-Package"
+                            class="hover:underline text-[#ffbf28]">Lit Wiki</a></li>
+                    <li><a href="https://github.com/luvit/lit/blob/master/README.md"
+                            class="hover:underline text-[#ffbf28]">Lit README</a></li>
+                </ul>
+            </div>
+
+            <!-- libuv bindings -->
+            <div class="bg-zinc-900/60 backdrop-blur-md p-5 rounded-lg shadow border border-zinc-800">
+                <h3 class="text-xl font-semibold text-[#0594bd] mb-2 flex items-center gap-2">
+                    <i class="fas fa-plug"></i> Luv Bindings
+                </h3>
+                <p class="text-zinc-400 mb-2">Lua bindings for libuv, used under the hood by Luvit and usable
+                    standalone.
+                </p>
+                <ul class="list-disc list-inside text-sm text-zinc-300 space-y-1">
+                    <li><a href="https://github.com/luvit/luv/blob/master/docs.md"
+                            class="hover:underline text-[#ffbf28]">Luv API Docs</a></li>
+                </ul>
+            </div>
+
+            <!-- luvi runtime -->
+            <div class="bg-zinc-900/60 backdrop-blur-md p-5 rounded-lg shadow border border-zinc-800">
+                <h3 class="text-xl font-semibold text-[#0594bd] mb-2 flex items-center gap-2">
+                    <i class="fas fa-cogs"></i> Luvi Runtime
+                </h3>
+                <p class="text-zinc-400 mb-2">Luvi is the base runtime for bundling apps using Luvit conventions.</p>
+                <ul class="list-disc list-inside text-sm text-zinc-300 space-y-1">
+                    <li><a href="https://github.com/luvit/luvi/blob/master/README.md"
+                            class="hover:underline text-[#ffbf28]">Luvi Docs</a></li>
+                </ul>
+            </div>
+
+            <!-- source code -->
+            <div class="bg-zinc-900/60 backdrop-blur-md p-5 rounded-lg shadow border border-zinc-800">
+                <h3 class="text-xl font-semibold text-[#0594bd] mb-2 flex items-center gap-2">
+                    <i class="fab fa-github"></i> Source Code
+                </h3>
+                <p class="text-zinc-400 mb-2">Explore the source of the Luvit ecosystem projects on GitHub.</p>
+                <ul class="list-disc list-inside text-sm text-zinc-300 space-y-1">
+                    <li><a href="https://github.com/luvit/luvit" class="hover:underline text-[#ffbf28]">Luvit</a></li>
+                    <li><a href="https://github.com/luvit/lit" class="hover:underline text-[#ffbf28]">Lit</a></li>
+                    <li><a href="https://github.com/luvit/luvi" class="hover:underline text-[#ffbf28]">Luvi</a></li>
+                    <li><a href="https://github.com/luvit/luv" class="hover:underline text-[#ffbf28]">Luv</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mt-16 text-center">
+            <h2 class="text-2xl font-bold mb-4">Luvit Ecosystem Map</h2>
+            <div class="bg-zinc-900/40 border border-zinc-800 rounded-lg p-4">
+                <img src="img/components.svg" class="w-full h-auto" />
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-10 text-center border-t border-zinc-800 text-sm text-zinc-500">
+        <p class="mb-3">
+            <a href="https://github.com/luvit/luvit.io" class="text-[#0594bd] hover:text-white mx-2"><i
+                    class="fab fa-github"></i></a>
+            <a href="https://discord.gg/luvit" class="text-[#0594bd] hover:text-white mx-2"><i
+                    class="fab fa-discord"></i></a>
+        </p>
+        <p>© 2015 - 2025 The Luvit Authors •
+            <a href="https://github.com/luvit/luvit.io" class="text-[#ffbf28] hover:text-red-400 hover:underline">
+                Source on GitHub
+            </a>
+        </p>
+    </footer>
+
+    <div class="text-center text-sm text-zinc-600 px-4 pb-10">
+        <p>This is an independent fan-made redesign of the Luvit website, created to highlight the brilliance of the
+            Luvit
+            ecosystem.</p>
+        <p>Designed by Numelon Bespoke as a demonstration. Kavun Cloud and nearly every Numelon service uses Luvit under
+            the
+            hood. It's that good.</p>
+    </div>
+</body>
+</body>
+
+</html>
