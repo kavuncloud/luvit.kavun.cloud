@@ -172,12 +172,6 @@ print("Server running at http://127.0.0.1:8080/")</code></pre>
     <section class="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12 items-start">
         <div>
             <pre
-                class="language-shell rounded-xl overflow-auto mb-6 p-4 bg-[#161616] border border-zinc-800 shadow-inner text-sm font-mono"><code>&gt; mkdir myapp && cd myapp
-&gt; lit install creationix/weblit
-&gt; nano server.lua
-&gt; luvit server.lua</code></pre>
-
-            <pre
                 class="language-lua rounded-xl overflow-auto mb-6 p-6 bg-[#161616] border border-zinc-800 shadow-inner"><code class="language-lua">local weblit = require("weblit")
 
 weblit.app.bind({ host = "127.0.0.1", port = 1337 })
@@ -208,6 +202,12 @@ weblit.app.bind({ host = "127.0.0.1", port = 1337 })
             <p class="text-zinc-400 mb-4">Install with <code>lit install creationix/weblit</code> and serve with
                 <code>luvit</code>.
             </p>
+
+            <pre
+                class="language-shell rounded-xl overflow-auto mb-6 p-4 bg-[#161616] border border-zinc-800 shadow-inner text-sm font-mono"><code>&gt; mkdir myapp && cd myapp
+&gt; lit install creationix/weblit
+&gt; nano server.lua
+&gt; luvit server.lua</code></pre>
         </div>
     </section>
 
